@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registrar Venda Manual</title>
+
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f3f3f3;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .form-container {
+      background-color: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    input, button {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    .success {
+      color: green;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+  </style>
+
+  <!-- Facebook Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}
+    (window, document, 'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+
+    fbq('init', '1177415886657919'); // seu pixel aqui
+    fbq('track', 'PageView');
+  </script>
+</head>
+<body>
+
+  <div class="form-container">
+    <h2>Registrar Venda Manual</h2>
+    <input type="text" id="telefone" placeholder="Número do WhatsApp (ex: 12988457105)">
+    <input type="number" id="valor" placeholder="Valor da venda (ex: 67)">
+    <button onclick="registrarVenda()">Registrar Venda</button>
+    <div class="success" id="confirmacao" style="display:none;">
+      ✅ Venda registrada com sucesso!
+    </div>
+  </div>
+
+  <script>
+    function registrarVenda() {
+      const telefone = document.getElementById("telefone").value.trim();
+      const valor = parseFloat(document.getElementById("valor").value);
+
+      if (!telefone || isNaN(valor) || valor <= 0) {
+        alert("Preencha corretamente o número e o valor da venda.");
+        return;
+      }
+
+      fbq('track', 'Purchase', {
+        value: valor,
+        currency: 'BRL',
+        content_name: 'Venda manual via WhatsApp',
+        content_ids: [telefone],
+        content_type: 'lead'
+      });
+
+      document.getElementById("confirmacao").style.display = 'block';
+    }
+  </script>
+
+</body>
+</html>
