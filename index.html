@@ -1,16 +1,14 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Fale Comigo</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
-  <style>
-    * {
-      box-sizing: border-box;
-    }
 
+  <style>
     body {
       background-color: #fff6f9;
       font-family: 'Montserrat', sans-serif;
@@ -52,22 +50,11 @@
       font-size: 16px;
       font-weight: 400;
       color: #555;
-      margin-bottom: 20px;
-    }
-
-    input {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
-      border: 1px solid #ffd6e5;
-      border-radius: 8px;
-      font-size: 14px;
-      box-sizing: border-box;
+      margin-bottom: 30px;
     }
 
     .link-button {
       display: block;
-      width: 100%;
       background-color: #e63e84;
       color: white;
       text-decoration: none;
@@ -99,13 +86,23 @@
 
   <!-- Facebook Pixel -->
   <script>
-    !function(f,b,e,v,n,t,s){
-      if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-      n.queue=[];t=b.createElement(e);t.async=!0;
-      t.src=v;s=b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t,s)}(window,document,'script',
+    ! function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
       'https://connect.facebook.net/en_US/fbevents.js');
     fbq('init', '1177415886657919');
     fbq('track', 'PageView');
@@ -122,42 +119,32 @@
       class="profile-img" />
 
     <div class="title">Me chame no WhatsApp</div>
-    <div class="subtitle">Antes de clicar, preencha rapidinho aqui 👇</div>
+    <div class="subtitle">Clique no botão abaixo para iniciar sua consulta gratuita!</div>
 
-    <input type="text" id="nome" placeholder="Seu nome">
-    <input type="text" id="motivo" placeholder="O que você quer resolver? (ex: trazer meu amor de volta)">
+    <a class="link-button"
+  href="https://wa.me/5512988457105?text=Tenho%20interesse%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
+  onclick="fbq('track', 'InitiateCheckout');">
+  Falar agora no WhatsApp
+    </a>
 
-    <a class="link-button" href="#" onclick="enviarWhatsApp()">Falar agora no WhatsApp</a>
+
 
     <div class="explanation">
       Assim que você me chamar, farei uma leitura completa e espiritual da sua situação amorosa. <br>
-      Vou te mostrar o que está acontecendo, se há influências negativas ou rivais, e te indicar o melhor caminho para resolver.
+      Vou te mostrar o que está acontecendo, se há influências negativas ou rivais, e te indicar o melhor caminho para
+      resolver.
     </div>
 
     <div class="footer">© 2025 atendimento confidencial</div>
   </div>
-
-  <script>
-    function enviarWhatsApp() {
-      const nome = document.getElementById("nome").value.trim();
-      const motivo = document.getElementById("motivo").value.trim();
-
-      if (!nome || !motivo) {
-        alert("Por favor, preencha seu nome e o que deseja resolver ❤️");
-        return;
-      }
-
-      const mensagem = `Oi, meu nome é ${nome} e gostaria de ${motivo}.`;
-      const link = `https://wa.me/5512988457105?text=${encodeURIComponent(mensagem)}`;
-
-      fbq('track', 'InitiateCheckout');
-      window.location.href = link;
-    }
-  </script>
-
   <script src="https://unpkg.com/no-devtools@latest/dist/no-devtools.min.js"></script>
   <script>
+    
     noDevTools.init();
   </script>
+
+
+
 </body>
+
 </html>
