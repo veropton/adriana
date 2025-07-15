@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fale Comigo</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet" />
+
+  <style>
+    body {
+      background-color: #fff6f9;
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 480px;
+      width: 100%;
+      text-align: center;
+      padding: 40px 20px;
+      background: #ffffff;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(255, 192, 203, 0.2);
+    }
+
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ffd6e5;
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #c7266b;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      font-weight: 400;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    .link-button {
+      display: block;
+      background-color: #e63e84;
+      color: white;
+      text-decoration: none;
+      padding: 16px 20px;
+      border-radius: 12px;
+      margin: 12px 0;
+      font-size: 16px;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .link-button:hover {
+      background-color: #c92b6e;
+    }
+
+    .explanation {
+      font-size: 14px;
+      color: #444;
+      margin-top: 20px;
+      line-height: 1.6;
+    }
+
+    .footer {
+      margin-top: 40px;
+      font-size: 13px;
+      color: #999;
+    }
+  </style>
+
+  <!-- Facebook Pixel -->
+  <script>
+    ! function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ?
+          n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = !0;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = !0;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1177415886657919');
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1177415886657919&ev=PageView&noscript=1" />
+  </noscript>
+</head>
+
+<body>
+  <div class="container">
+    <img src="https://media.linklist.bio/avatars/uKL3FUrwvOmWPrPOZT8LrQEIY0eraBH4l5Z8QEJW.webp" alt="Foto da expert"
+      class="profile-img" />
+
+    <div class="title">Me chame no WhatsApp</div>
+    <div class="subtitle">Clique no botão abaixo para iniciar sua consulta gratuita!</div>
+
+    <a class="link-button"
+      href="https://wa.me/5514981272018?text=Tenho%20interesse%20e%20gostaria%20de%20mais%20informa%C3%A7%C3%B5es"
+      onclick="fbq('trackCustom', 'CliqueWhats');">
+      Falar agora no WhatsApp
+    </a>
+
+    <div class="explanation">
+      Assim que você me chamar, farei uma leitura completa e espiritual da sua situação amorosa. <br>
+      Vou te mostrar o que está acontecendo, se há influências negativas ou rivais, e te indicar o melhor caminho para
+      resolver.
+    </div>
+
+    <div class="footer">© 2025 atendimento confidencial</div>
+  </div>
+  <script src="https://unpkg.com/no-devtools@latest/dist/no-devtools.min.js"></script>
+  <script>
+    // ativa a proteção
+    noDevTools.init();
+  </script>
+
+
+
+</body>
+
+</html>
